@@ -1,0 +1,112 @@
+services:
+
+  wordpress:
+    image: wordpress:7.1
+    restart: unless-stopped
+
+    depends_on:
+      - db
+
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER: ${MYSQL_USER}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+
+    volumes:
+      - ./wordpress:/var/www/html
+
+    networks:
+      - harmony_internal
+      - proxy
+
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=proxy
+
+      - traefik.http.routers.harmony.rule=Host(`harmony.lbuchelet.fr`)
+      - traefik.http.routers.harmony.entrypoints=websecure
+      - traefik.http.routers.harmony.tls=true
+      - traefik.http.routers.harmony.tls.certresolver=letsencrypt
+
+      - traefik.http.services.harmony.loadbalancer.server.port=80
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${WORDPRESS_DB_NAME}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+    ports:
+      - "127.0.0.1:3312:3306"
+
+    volumes:
+      - db:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+
+    networks:
+      - harmony_internal
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+
+  api:
+    build:
+      context: ./api
+
+    restart: unless-stopped
+
+    depends_on:
+      - db
+
+    environment:
+      DATABASE_URL: mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/${API_DB_NAME}
+
+    networks:
+      - harmony_internal
+      - proxy
+
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=proxy
+
+      - traefik.http.routers.harmony-api.rule=Host(`api-harmony.lbuchelet.fr`)
+      - traefik.http.routers.harmony-api.entrypoints=websecure
+      - traefik.http.routers.harmony-api.tls=true
+      - traefik.http.routers.harmony-api.tls.certresolver=letsencrypt
+
+      - traefik.http.services.harmony-api.loadbalancer.server.port=8000
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+
+volumes:
+  db:
+    name: harmony_db
+
+
+networks:
+  harmony_internal:
+    driver: bridge
+
+  proxy:
+    external: true
