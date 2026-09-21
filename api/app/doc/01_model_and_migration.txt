@@ -1,0 +1,111 @@
+# Harmony API Cheatsheet
+## One-time setup
+### Initialize Alembic
+```
+docker compose exec api bash
+
+alembic init alembic
+```
+### Configure alembic/env.py
+
+```
+from app.database.base import Base
+from app.models import User
+
+target_metadata = Base.metadata
+```
+
+| If you create new models later, import them here (or in models/__init__.py if that's what env.py imports).
+
+## Creating a new model
+### 1. Create the model
+
+```
+app/models/user.py
+```
+
+```
+class User(Base):
+    __tablename__ = "api_users"
+
+    id: Mapped[int] = mapped_column(
+        primary_key=True,
+        index=True
+    )
+```
+
+### 2. Register the model
+
+```
+app/models/__init__.py
+```
+
+```
+from app.models.user import User
+```
+
+| This ensures SQLAlchemy loads the model so Alembic can detect it.
+
+### 3. Generate the migration
+
+```
+docker compose exec api bash
+
+alembic revision --autogenerate -m "create users table"
+```
+
+A migration is created in:
+
+```
+alembic/versions/
+```
+
+Always review the generated migration before applying it. Auto-generation is very good, but it's not perfect.
+
+### 4. Apply the migration
+
+```
+alembic upgrade head
+```
+
+### 5. Verify
+
+In HeidiSQL:
+
+- Refresh the database.
+- Check that the table exists.
+- Verify the columns and indexes.
+
+## Useful Alembic commands
+
+- Create a migration:
+
+```
+alembic revision --autogenerate -m "description"
+```
+
+- Apply migrations:
+
+```
+alembic upgrade head
+```
+
+- Show current version:
+
+```
+alembic current
+```
+
+- Show migration history:
+
+```
+alembic history
+```
+
+- Rollback one migration:
+
+```
+alembic downgrade -1
+```
+
+| Golden Rule: Never modify a migration that has already been applied to a shared environment. If the schema needs to change, create a new migration. On a local development database, it's fine to delete and recreate migrations while you're still iterating, but once a migration is shared or deployed, treat it as immutable.

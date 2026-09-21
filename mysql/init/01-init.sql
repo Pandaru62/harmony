@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS harmony_api;
+
+GRANT ALL PRIVILEGES ON harmony_api.* TO 'harmony'@'%';
+FLUSH PRIVILEGES;

@@ -1,0 +1,72 @@
+# =========================
+# Environment / secrets
+# =========================
+
+.env
+.env.*
+!.env.example
+
+api/.env
+
+
+# =========================
+# WordPress - core
+# =========================
+
+wordpress/wp-admin/
+wordpress/wp-includes/
+wordpress/*.php
+wordpress/*.txt
+wordpress/*.html
+
+
+# =========================
+# WordPress - generated data
+# =========================
+
+wordpress/wp-content/uploads/
+wordpress/wp-content/upgrade/
+wordpress/wp-content/upgrade-temp-backup/
+
+
+# =========================
+# WordPress - third-party
+# =========================
+
+wordpress/wp-content/plugins/
+wordpress/wp-content/themes/twentytwentythree/
+wordpress/wp-content/themes/twentytwentyfour/
+wordpress/wp-content/themes/twentytwentyfive/
+
+wordpress/wp-content/languages/
+
+
+# =========================
+# Python
+# =========================
+
+__pycache__/
+*.py[cod]
+*.pyo
+
+.venv/
+venv/
+env/
+
+
+# =========================
+# IDE / OS
+# =========================
+
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# =========================
+# Database backups
+# =========================
+
+*.sql
+!mysql/init/01-init.sql

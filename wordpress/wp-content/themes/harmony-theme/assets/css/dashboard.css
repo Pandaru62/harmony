@@ -1,0 +1,438 @@
+.dashboard-page {
+    min-height: 100vh;
+    padding: 1rem 0 1rem;
+}
+
+.dashboard-container {
+    width: min(100% - 1rem, 420px);
+    margin: 0 auto;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.dashboard-welcome h1 {
+    margin: 0 0 1rem;
+    font-size: 1.6rem;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.dashboard-section {
+    margin-top: 1.5rem;
+}
+
+.dashboard-section h2 {
+    margin: 0;
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+.section-line {
+    width: 100%;
+    height: 1px;
+    margin-top: 0.25rem;
+    background: currentColor;
+    opacity: 0.6;
+}
+
+
+/* =========================
+   SYNC
+========================= */
+
+.dashboard-sync {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+}
+
+.dashboard-sync-img {
+    max-height: 100px;
+}
+
+.sync-frame {
+    display: flex;
+    border: 2px solid var(--color-main-dark-blue);
+    border-radius: 16px;
+    padding: 16px;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sync-placeholder {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #f7f4fa;
+
+    font-size: 0.8rem;
+}
+
+.sync-content {
+    flex: 1;
+    text-align: center;
+}
+
+.sync-button,
+.more-medals,
+.wellbeing-message button {
+    border: 0;
+    border-radius: 10px;
+
+    padding: 0.7rem 1rem;
+
+    background: var(--color-main-dark-blue);
+    color: white;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+}
+
+.sync-content p {
+    margin: 0.35rem 0 0;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================
+   STEPS
+========================= */
+
+/* =========================
+   TODAY
+========================= */
+
+.today-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+
+    gap: 0.75rem;
+
+    margin-top: 0.75rem;
+}
+
+
+/* =========================
+   STEPS PROGRESS
+========================= */
+
+.today-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.steps-progress {
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background:
+        conic-gradient(
+            var(--color-main-dark-blue) var(--progress),
+            var(--color-white) var(--progress)
+        );
+
+}
+
+
+/*
+ * White center of the progress circle
+ */
+.steps-progress-inner {
+    width: 92px;
+    height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transform: rotate(90deg);
+}
+
+.steps-progress-inner img {
+    width: 52px;
+    height: 52px;
+
+    object-fit: contain;
+    transform: rotate(-90deg);
+}
+
+
+/* =========================
+   STEP VALUE
+========================= */
+
+.steps-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+
+    margin-top: 0.5rem;
+}
+
+.steps-value strong {
+    font-size: 1.25rem;
+}
+
+.steps-value span {
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   ADVICE
+========================= */
+
+.today-advice {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.advice-frame {
+    border: 1px solid var(--color-main-dark-blue);
+
+    padding: 0.5rem;
+
+    text-align: center;
+}
+
+.advice-frame p {
+    margin: 0;
+
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.advice-button {
+    width: 100%;
+
+    margin-top: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.advice-button img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* =========================
+   HEALTH STATS
+========================= */
+
+.today-health-stats {
+    width: 80%;
+
+    margin: 1rem auto 0;
+}
+
+.health-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    padding: 0.5rem 0;
+
+    border-bottom: 1px solid var(--color-main-dark-blue);
+
+    font-size: 0.9rem;
+}
+
+.health-stat img {
+    width: 22px;
+    height: 22px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   HEALTH
+========================= */
+
+.health-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+
+    width: 80%;
+
+    margin: 1rem auto 0;
+
+    padding-bottom: 0.5rem;
+
+    border-bottom: 1px solid var(--color-main-dark-blue);
+
+    font-size: 0.9rem;
+}
+
+.health-icon {
+    font-size: 1.2rem;
+}
+
+
+/* =========================
+   WELLBEING
+========================= */
+
+.wellbeing-card {
+    display: flex;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    margin-top: 0.75rem;
+}
+
+.wellbeing-message {
+    flex: 1;
+}
+
+.wellbeing-message p {
+    margin: 0 0 0.5rem;
+
+    padding: 0.5rem;
+
+    border: 1px solid var(--color-main-dark-blue);
+
+    text-align: center;
+
+    font-size: 0.9rem;
+}
+
+.wellbeing-message button {
+    width: 100%;
+}
+
+.wellbeing-score {
+    width: 90px;
+    height: 90px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 8px solid #72b77b;
+    border-radius: 50%;
+}
+
+.wellbeing-score strong {
+    font-size: 1.6rem;
+}
+
+.wellbeing-score span {
+    font-size: 1rem;
+}
+
+
+/* =========================
+   MEDALS
+========================= */
+
+.rewards-section h3 {
+    margin: 0.5rem 0;
+
+    text-align: center;
+
+    font-size: 0.9rem;
+}
+
+.medals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1rem;
+}
+
+.medal-card {
+    text-align: center;
+}
+
+.medal-placeholder {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 0.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ddd;
+
+    font-size: 2.5rem;
+}
+
+.medal-card strong {
+    display: block;
+
+    font-size: 0.75rem;
+}
+
+.more-medals {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .dashboard-container {
+        width: calc(100% - 1rem);
+    }
+
+    .steps-circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .wellbeing-score {
+        width: 80px;
+        height: 80px;
+    }
+
+    .health-stat {
+        width: 90%;
+    }
+}
