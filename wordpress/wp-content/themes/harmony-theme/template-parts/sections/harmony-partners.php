@@ -2,25 +2,55 @@
     <div class="div-32">
         <h2>Prêt à retrouver votre équilibre ?</h2>
         <div>
-            <a class="btn btn--primary" href="/well-being">
+            <button
+                type="button"
+                aria-haspopup="dialog"
+                aria-controls="buy-modal"
+                class="btn btn--primary buy-modal-trigger"
+            >
                 Achetez chez nos partenaires
-            </a>
+            </button>
+            
             <p class="cta-key">En ligne ou dans leurs magasins.</p>
         </div>
     </div>
     <div class="partners-logos">
-        <img
-        src="/wp-content/themes/harmony-theme/assets/images/partners/Decath.png"
-        alt="Logo Decathlon"
-        />
-        <img
-            src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.png"
-            alt="Logo Cultura"
-        />
-        <img
-            src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.png"
-            alt="Logo Fnac"
-        />
-    </div>
 
+        <a
+            href="https://www.decathlon.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visiter le site Decathlon"
+        >
+            <img
+                src="/wp-content/themes/harmony-theme/assets/images/partners/Decath.png"
+                alt="Decathlon"
+            />
+        </a>
+
+        <a
+            href="https://www.cultura.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visiter le site Cultura"
+        >
+            <img
+                src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.png"
+                alt="Cultura"
+            />
+        </a>
+
+        <a
+            href="https://www.fnac.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visiter le site Fnac"
+        >
+            <img
+                src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.png"
+                alt="Fnac"
+            />
+        </a>
+
+    </div>
 </section>

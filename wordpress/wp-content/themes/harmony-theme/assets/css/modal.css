@@ -12,16 +12,16 @@
     align-items: center;
     justify-content: center;
 
-    margin: auto;
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 1rem;
+
     border: 0;
-    background: none;
+    background: transparent;
 }
 
-
-/*
- * The modal is hidden through the
- * native HTML hidden attribute.
- */
 .buy-modal[hidden] {
     display: none;
 }
@@ -34,6 +34,8 @@
 .buy-modal__overlay {
     position: absolute;
     inset: 0;
+
+    background: rgb(0 0 0 / 45%);
 }
 
 
@@ -45,8 +47,7 @@
     position: relative;
     z-index: 1;
 
-    width: min(100%, 500px);
-
+    width: min(100%, 520px);
     max-height: 90vh;
     overflow-y: auto;
 
@@ -56,9 +57,8 @@
 
     border-radius: 18px;
 
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 40px rgb(0 0 0 / 20%);
 }
-
 
 .buy-modal__content h2 {
     margin: 0 2rem 0.5rem 0;
@@ -68,10 +68,9 @@
     font-size: 1.5rem;
 }
 
-
 .buy-modal__intro {
-    margin: 0 0 1.5rem;
-
+    margin: 0 0 2rem;
+    text-align: center;
     color: #555;
 }
 
@@ -82,7 +81,6 @@
 
 .buy-modal__close {
     position: absolute;
-
     top: 0.75rem;
     right: 0.75rem;
 
@@ -100,47 +98,136 @@
     line-height: 1;
 
     cursor: pointer;
+
+    transition: background 0.2s ease;
 }
 
 .buy-modal__close:hover {
     background: #f1f1f1;
 }
 
+.buy-modal__close:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
 
 /* =========================
-   SHOPS
+   SECTIONS
+========================= */
+
+.buy-modal__stores,
+.buy-modal__online {
+    margin-top: 1.75rem;
+}
+
+.buy-modal__stores h3,
+.buy-modal__online h3 {
+    margin: 0 0 0.75rem;
+
+    color: var(--twilight-indigo);
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================
+   FIND STORES
+========================= */
+
+.buy-modal__map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1.5rem;
+
+    border-radius: 14px;
+
+    background: var(--powder-blue);
+
+    text-align: center;
+}
+
+.buy-modal__map p {
+    max-width: 320px;
+
+    margin: 0;
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   ONLINE PARTNERS
 ========================= */
 
 .buy-modal__shops {
     display: flex;
     flex-direction: column;
 
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
+.buy-modal__partner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.buy-modal__shop {
-    padding: 1rem;
+    min-height: 70px;
+    padding: 0.75rem 1.5rem;
 
     border: 1px solid var(--powder-blue);
     border-radius: 12px;
+
+    background: white;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.buy-modal__partner img {
+    display: block;
+
+    max-width: 150px;
+    max-height: 45px;
+
+    width: auto;
+    height: auto;
+}
+
+.buy-modal__partner:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--twilight-indigo);
+
+    box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+}
+
+.buy-modal__partner:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
 }
 
 
-.buy-modal__shop h3 {
-    margin: 0 0 0.35rem;
+/* =========================
+   MOBILE
+========================= */
 
-    color: var(--twilight-indigo);
-}
+@media (max-width: 600px) {
 
+    .buy-modal {
+        padding: 0.75rem;
+    }
 
-.buy-modal__shop p {
-    margin: 0 0 1rem;
+    .buy-modal__content {
+        padding: 1.5rem;
 
-    font-size: 0.9rem;
-}
+        border-radius: 14px;
+    }
 
-
-.buy-modal__shop .btn {
-    display: inline-flex;
 }

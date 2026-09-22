@@ -1024,7 +1024,6 @@ html{
     display: flex;
     padding: 32px 24px;
     flex-direction: column;
-    align-items: flex-start;
     gap: 10px;
 }
 

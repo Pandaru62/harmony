@@ -57,6 +57,15 @@ wp_footer();
     <a href="/blog" target="_blank" rel="noopener noreferrer">
         Blog
     </a>
+    <button
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="buy-modal"
+        class="buy-modal-trigger cta-secondary"
+        style="color:white"
+    >
+        Où acheter ?
+    </button>
 
     <div class="social-media">
         <?php if ($facebook_url): ?>

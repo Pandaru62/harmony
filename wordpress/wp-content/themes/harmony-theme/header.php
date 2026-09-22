@@ -59,7 +59,7 @@
 
                     <button
                         type="button"
-                        class="btn btn--header header-buy-button"
+                        class="btn btn--header header-buy-button buy-modal-trigger"
                         aria-haspopup="dialog"
                         aria-controls="buy-modal"
                     >
@@ -183,64 +183,91 @@
             </button>
 
             <h2 id="buy-modal-title">
-                Où acheter Harmony ?
+                Où trouver Harmony ?
             </h2>
 
             <p class="buy-modal__intro">
-                Retrouvez Harmony auprès de nos partenaires.
+                Retrouvez Harmony chez nos partenaires,<br/> en magasin ou en ligne.
             </p>
 
-            <div class="buy-modal__shops">
 
-                <!-- SHOP 1 -->
+            <!-- MAGASINS -->
 
-                <div class="buy-modal__shop">
+            <section class="buy-modal__stores">
 
-                    <h3>
-                        Boutique Harmony
-                    </h3>
+                 <h3>Nous trouver</h3>
 
-                    <p>
-                        Découvrez tous nos produits directement
-                        sur notre boutique.
-                    </p>
+                    <div class="buy-modal__map">
+
+                        <p>
+                            Retrouvez Harmony dans les magasins partenaires
+                            près de chez vous.
+                        </p>
+
+                        <a
+                            href="https://www.google.com/maps/search/Decathlon+Fnac+Cultura/"
+                            class="btn btn--primary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Voir les magasins
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+            <!-- ACHAT EN LIGNE -->
+
+            <section class="buy-modal__online">
+
+                <h3>Acheter en ligne</h3>
+
+                <div class="buy-modal__shops">
 
                     <a
-                        href="#"
-                        class="btn btn--primary"
+                        href="https://www.decathlon.fr/"
+                        class="buy-modal__partner"
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="Acheter Harmony chez Decathlon"
                     >
-                        Visiter la boutique
+                        <img
+                            src="/wp-content/themes/harmony-theme/assets/images/partners/Decath.png"
+                            alt="Decathlon"
+                        />
+                    </a>
+
+                    <a
+                        href="https://www.cultura.com/"
+                        class="buy-modal__partner"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Acheter Harmony chez Cultura"
+                    >
+                        <img
+                            src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.png"
+                            alt="Cultura"
+                        />
+                    </a>
+
+                    <a
+                        href="https://www.fnac.com/"
+                        class="buy-modal__partner"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Acheter Harmony chez Fnac"
+                    >
+                        <img
+                            src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.png"
+                            alt="Fnac"
+                        />
                     </a>
 
                 </div>
 
-
-                <!-- SHOP 2 -->
-
-                <div class="buy-modal__shop">
-
-                    <h3>
-                        Partenaire
-                    </h3>
-
-                    <p>
-                        Retrouvez Harmony chez notre partenaire.
-                    </p>
-
-                    <a
-                        href="#"
-                        class="btn btn--primary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Voir le produit
-                    </a>
-
-                </div>
-
-            </div>
+            </section>
 
         </div>
 

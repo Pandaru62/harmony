@@ -8,6 +8,8 @@
 
     <button
         class="faq-toggle"
+        data-analytics="faq-toggle"
+        data-faq-id="<?= $id ?>"
         type="button"
         aria-expanded="false">
 

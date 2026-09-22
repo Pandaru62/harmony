@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const modal = document.getElementById('buy-modal');
-    const openButton = document.querySelector('.header-buy-button');
+    const openButtons = document.querySelectorAll('.buy-modal-trigger');
     const closeButton = document.querySelector('.buy-modal__close');
     const overlay = document.querySelector('.buy-modal__overlay');
 
-    if (!modal || !openButton || !closeButton || !overlay) {
+    if (!modal || !openButtons.length || !closeButton || !overlay) {
         return;
     }
 
-    const openModal = () => {
+    const openModal = (button) => {
         modal.hidden = false;
         document.body.classList.add('modal-open');
 
@@ -20,10 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.hidden = true;
         document.body.classList.remove('modal-open');
 
-        openButton.focus();
+        // Replacer le focus sur le bouton qui avait ouvert le modal
+        if (currentOpenButton) {
+            currentOpenButton.focus();
+        }
     };
 
-    openButton.addEventListener('click', openModal);
+    let currentOpenButton = null;
+
+    openButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            currentOpenButton = button;
+            openModal(button);
+        });
+    });
 
     closeButton.addEventListener('click', closeModal);
 
