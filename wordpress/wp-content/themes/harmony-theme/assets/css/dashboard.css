@@ -92,14 +92,9 @@
 .wellbeing-message button {
     border: 0;
     border-radius: 10px;
-
     padding: 0.7rem 1rem;
-
-    background: var(--color-main-dark-blue);
     color: white;
-
     font-size: 1rem;
-
     cursor: pointer;
 }
 
@@ -436,3 +431,104 @@
         width: 90%;
     }
 }
+
+.dashboard-sync-button img {
+    transition: transform 0.2s ease;
+}
+
+.dashboard-sync-button img.is-syncing {
+    animation: dashboard-sync-spin 1.2s linear infinite;
+}
+
+@keyframes dashboard-sync-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.dashboard-info-modal {
+    position: fixed;
+    inset: 0;
+    
+    width: min(520px, calc(100% - 2rem));
+    max-height: 90vh;
+
+    margin: auto;
+    padding: 0;
+
+    border: 0;
+    border-radius: 18px;
+
+    background: transparent;
+}
+
+.dashboard-info-modal::backdrop {
+    background: rgb(0 0 0 / 45%);
+}
+
+.dashboard-info-modal__content {
+    position: relative;
+    padding: 2rem;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgb(0 0 0 / 20%);
+}
+
+.dashboard-info-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    width: 36px;
+    height: 36px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: transparent;
+
+    font-size: 1.8rem;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.dashboard-info-modal__close:hover {
+    background: rgb(0 0 0 / 6%);
+}
+
+.dashboard-info-modal__close:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.dashboard-info-modal__body {
+    padding-right: 2rem;
+}
+
+.dashboard-info-modal__body h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-info-modal__body p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+
+    .dashboard-info-modal__content {
+        padding: 1.5rem;
+    }
+
+    .dashboard-info-modal__body {
+        padding-right: 1rem;
+    }
+
+}
+

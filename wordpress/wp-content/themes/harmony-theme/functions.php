@@ -4,6 +4,7 @@ require_once get_template_directory() . '/inc/settings.php';
 require_once get_template_directory() . '/inc/menus.php';
 require_once get_template_directory() . '/inc/form-handler.php';
 require_once get_template_directory() . '/inc/harmony-api.php';
+require_once get_template_directory() . '/inc/dashboard-handler.php';
 
 function harmonyThemeSetup() {
     add_theme_support('title-tag');
@@ -146,6 +147,23 @@ function harmonyThemeAssets() {
         [],
         filemtime($path . '/assets/js/profile-menu.js'),
         true
+    );
+
+    wp_enqueue_script(
+        'dashboard',
+        $theme . '/assets/js/dashboard.js',
+        [],
+        filemtime($path . '/assets/js/dashboard.js'),
+        true
+    );
+
+    wp_localize_script(
+        'dashboard',
+        'harmonyDashboard',
+        [
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'nonce'   => wp_create_nonce('harmony_sync_health'),
+        ]
     );
 
 }

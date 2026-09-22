@@ -103,15 +103,17 @@ $step_progress = min(
     
                 <div class="sync-content">
     
-                    <button class="btn btn--primary">
+                    <button
+                        type="button"
+                        class="btn btn--primary dashboard-sync-button"
+                    >
                         <img
-                            class=""
                             src="/wp-content/themes/harmony-theme/assets/icons/bluetooth.svg"
                             alt=""
                         >
-                        Synchronisez
+                        <span>Synchronisez</span>
                     </button>
-    
+                        
                     <p>
                         Dernière synchronisation :
                         <strong><?php echo esc_html($date_label); ?></strong>.
@@ -188,14 +190,14 @@ $step_progress = min(
 
                     </div>
 
-                    <button class="btn btn--primary advice-button">
+                    <button type="button" class="btn btn--primary dashboard-info-button advice-button" data-info="activity">
 
                         <img
                             src="/wp-content/themes/harmony-theme/assets/icons/info.svg"
                             alt=""
                         >
 
-                        Plus d'informations
+                        <span>Plus d'informations</span>
 
                     </button>
 
@@ -258,8 +260,15 @@ $step_progress = min(
                         Prenez soin de vous aujourd'hui.
                     </p>
 
-                    <button>
-                        ℹ &nbsp; Plus d'informations
+                    <button type="button" class="btn btn--primary dashboard-info-button advice-button" data-info="wellbeing">
+
+                        <img
+                            src="/wp-content/themes/harmony-theme/assets/icons/info.svg"
+                            alt=""
+                        >
+
+                        <span>Plus d'informations</span>
+
                     </button>
 
                 </div>
@@ -330,14 +339,43 @@ $step_progress = min(
 
             <?php endif; ?>
 
-            <button class="more-medals">
-                Plus de médailles
-            </button>
+            <?php if (count($medals) > 6): ?>
+
+                <button
+                    type="button"
+                    class="more-medals"
+                >
+                    Plus de médailles
+                </button>
+
+            <?php endif; ?>
 
         </section>
 
     </div>
 
 </main>
+
+<dialog
+    id="dashboard-info-modal"
+    class="dashboard-info-modal"
+>
+
+    <div class="dashboard-info-modal__content">
+
+        <button
+            type="button"
+            class="dashboard-info-modal__close"
+            aria-label="Fermer"
+        >
+            &times;
+        </button>
+
+        <div class="dashboard-info-modal__body">
+            <!-- Contenu injecté par JavaScript -->
+        </div>
+
+    </div>
+</dialog>
 
 <?php get_footer(); ?>
