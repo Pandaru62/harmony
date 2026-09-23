@@ -2,7 +2,7 @@
 
 <main class="page-content">
 
-    <div class="page-container">
+    <div class="container container-mb">
 
         <?php if (have_posts()) : ?>
 
