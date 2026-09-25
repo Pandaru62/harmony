@@ -232,6 +232,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Acheter Harmony chez Decathlon"
+                        data-retailer="Decathlon"
                     >
                         <img
                             src="/wp-content/themes/harmony-theme/assets/images/partners/Decath.png"
@@ -245,6 +246,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Acheter Harmony chez Cultura"
+                        data-retailer="Cultura"
                     >
                         <img
                             src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.png"
@@ -258,6 +260,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Acheter Harmony chez Fnac"
+                        data-retailer="Fnac"
                     >
                         <img
                             src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.png"
