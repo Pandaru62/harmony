@@ -217,7 +217,7 @@ function harmony_send_welcome_email($email, $firstname = '', $display_name = '')
 
     $subject = 'Bienvenue chez Harmony ! Votre compte est prêt';
 
-    $body = `
+    $body = '
     <!DOCTYPE html>
     <html lang="fr">
     <head>
@@ -310,13 +310,11 @@ function harmony_send_welcome_email($email, $firstname = '', $display_name = '')
 
                                 <p style="font-size:15px; line-height:1.7;">
                                     À bientôt,<br>
-                                    <strong>L'équipe Harmony</strong>
+                                    <strong>Team Harmony</strong>
                                 </p>
 
                             </td>
                         </tr>
-
-                        <!-- FOOTER -->
 
                         <tr>
                             <td align="center" style="background-color:#F2F4F3; padding:20px 30px;">
@@ -336,7 +334,7 @@ function harmony_send_welcome_email($email, $firstname = '', $display_name = '')
 
     </body>
     </html>
-    `;
+    ';
 
     $headers = [
         'Content-Type: text/html; charset=UTF-8',
