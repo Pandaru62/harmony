@@ -1,68 +1,83 @@
+
 <?php
+
 function harmony_contact_submit() {
+
+    // Vérification du nonce
     if (
         ! isset($_POST['harmony_nonce']) ||
         ! wp_verify_nonce(
-            $_POST['harmony_nonce'],
+            sanitize_text_field(wp_unslash($_POST['harmony_nonce'])),
             'harmony_contact'
         )
     ) {
         wp_die('Requête invalide.');
     }
 
-    $name = sanitize_text_field($_POST['name']);
-    $email = sanitize_email($_POST['email']);
-    $subject = sanitize_text_field($_POST['subject']);
-    $message = sanitize_textarea_field($_POST['message']);
+    // Récupération et nettoyage des données
+    $name = sanitize_text_field(wp_unslash($_POST['name'] ?? ''));
+    $email = sanitize_email(wp_unslash($_POST['email'] ?? ''));
+    $subject = sanitize_text_field(wp_unslash($_POST['subject'] ?? ''));
+    $message = sanitize_textarea_field(wp_unslash($_POST['message'] ?? ''));
 
+    // Vérification des champs
     if (
         empty($name) ||
         empty($email) ||
+        ! is_email($email) ||
         empty($message)
     ) {
-
-        wp_redirect(
-            add_query_arg(
-                'status',
-                'error',
-                wp_get_referer()
-            )
-        );
-
-        exit;
-
+        harmony_contact_redirect('error');
     }
 
+    // Destinataire
     $to = get_option('harmony_email');
 
+    if (empty($to) || ! is_email($to)) {
+        error_log('[Harmony] Adresse destinataire invalide.');
+        harmony_contact_redirect('error');
+    }
+
+    // Construction du message
+    $body = "Nom : {$name}\n";
+    $body .= "Email : {$email}\n\n";
+    $body .= "Message :\n{$message}";
+
+    // En-têtes
     $headers = [
-        'Reply-To: ' . $email
+        'Reply-To: ' . $name . ' <' . $email . '>',
     ];
 
-    wp_mail(
-
+    // Envoi
+    $sent = wp_mail(
         $to,
-
-        $subject,
-
-        $message,
-
+        $subject ?: 'Nouveau message depuis Harmony',
+        $body,
         $headers
-
     );
 
-    wp_redirect(
+    if (!$sent) {
+        error_log('[Harmony] Échec de l\'envoi du formulaire de contact.');
+        harmony_contact_redirect('error');
+    }
 
-        add_query_arg(
-            'status',
-            'success',
-            wp_get_referer()
-        )
+    harmony_contact_redirect('success');
+}
 
+// Redirection après traitement
+function harmony_contact_redirect($status) {
+
+    $referer = wp_get_referer();
+
+    if (!$referer) {
+        $referer = home_url('/');
+    }
+
+    wp_safe_redirect(
+        add_query_arg('status', $status, $referer)
     );
 
     exit;
-
 }
 
 add_action(

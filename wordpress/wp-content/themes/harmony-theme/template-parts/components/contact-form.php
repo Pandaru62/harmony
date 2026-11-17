@@ -1,15 +1,10 @@
-<?php
-
-    if (
-        isset($_GET['status']) &&
-        $_GET['status'] === 'success'
-    ):
-?>
-
-    <div class="success-banner">
-        Votre message a bien été envoyé.
-    </div>
-
+<?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
+    <output class="success-banner">
+        <div>
+            <strong>Message envoyé avec succès !</strong>
+            <p>Merci pour votre message. Notre équipe reviendra vers vous dans les meilleurs délais.</p>
+        </div>
+    </output>
 <?php endif; ?>
 
 <form

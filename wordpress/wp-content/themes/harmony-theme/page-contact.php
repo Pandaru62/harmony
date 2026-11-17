@@ -92,7 +92,10 @@ get_header(); ?>
         <div class="contact-row">
             <h3>Email</h3>
             <p class="contact-para"><?= nl2br(esc_html($harmony_email_msg)); ?></p>
-            <a class="cta-secondary" href="<?php echo esc_attr($harmony_email) ?>"><?php echo esc_attr($harmony_email) ?></a>
+            <a class="cta-secondary"
+            href="<?= esc_attr('mailto:' . $harmony_email); ?>">
+                <?= esc_html($harmony_email); ?>
+            </a>
         </div>
         <div class="contact-row">
             <h3>Adresse</h3>
