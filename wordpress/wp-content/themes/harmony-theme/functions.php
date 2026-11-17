@@ -202,3 +202,156 @@ add_action('init', function () {
     }
 
 });
+
+
+/**
+ * Send a welcome email after successful registration.
+ */
+function harmony_send_welcome_email($email, $firstname = '', $display_name = '') {
+
+    $recipient_name = !empty($firstname)
+        ? $firstname
+        : $display_name;
+
+    $login_url = home_url('/login/');
+
+    $subject = 'Bienvenue chez Harmony ! Votre compte est prêt';
+
+    $body = `
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bienvenue chez Harmony</title>
+    </head>
+
+    <body style="margin:0; padding:0; background-color:#F4F6F5; font-family:Arial, Helvetica, sans-serif; color:#304858;">
+
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F4F6F5; padding:30px 15px;">
+            <tr>
+                <td align="center">
+
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; background-color:#FFFFFF; border-radius:12px; overflow:hidden;">
+
+                        <!-- HEADER -->
+
+                        <tr>
+                            <td align="center" style="background-color:#285F6E; padding:30px 20px;">
+
+                                <h1 style="margin:0; color:#FFFFFF; font-size:30px; font-weight:600; letter-spacing:1px;">
+                                    Harmony
+                                </h1>
+
+                                <p style="margin:8px 0 0; color:#FFFFFF; font-size:12px; letter-spacing:2px;">
+                                    PRENEZ SOIN DE VOUS, SIMPLEMENT.
+                                </p>
+
+                            </td>
+                        </tr>
+
+                        <!-- CONTENT -->
+
+                        <tr>
+                            <td style="padding:40px 35px;">
+
+                                <h2 style="margin:0 0 25px; color:#304858; font-size:25px;">
+                                    Bienvenue chez Harmony !
+                                </h2>
+
+                                <p style="font-size:15px; line-height:1.7;">
+                                    Bonjour ' . esc_html($recipient_name) . ',
+                                </p>
+
+                                <p style="font-size:15px; line-height:1.7;">
+                                    Nous sommes ravis de vous accueillir au sein de la communauté Harmony.
+                                </p>
+
+                                <p style="font-size:15px; line-height:1.7;">
+                                    Votre compte vient d\'être créé avec succès.
+                                    Vous pouvez dès maintenant accéder à votre espace personnel
+                                    et commencer à profiter de nos services.
+                                </p>
+
+                                <!-- ACCOUNT INFORMATION -->
+
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:25px 0; background-color:#E8F3E7; border-radius:8px;">
+                                    <tr>
+                                        <td style="padding:20px;">
+
+                                            <p style="margin:0 0 10px; color:#285F3A; font-size:16px; font-weight:bold;">
+                                                Votre compte est prêt !
+                                            </p>
+
+                                            <p style="margin:0; color:#285F3A; font-size:14px;">
+                                                Adresse email : ' . esc_html($email) . '
+                                            </p>
+
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <!-- CTA -->
+
+                                <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin:30px auto;">
+                                    <tr>
+                                        <td align="center" bgcolor="#76B671" style="border-radius:8px;">
+                                            <a href="' . esc_url($login_url) . '"
+                                               style="display:inline-block; padding:15px 30px; color:#FFFFFF; font-size:15px; font-weight:bold; text-decoration:none;">
+                                                Accéder à mon espace
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <p style="font-size:15px; line-height:1.7;">
+                                    Nous vous remercions de votre confiance et vous souhaitons une excellente expérience avec Harmony.
+                                </p>
+
+                                <p style="font-size:15px; line-height:1.7;">
+                                    À bientôt,<br>
+                                    <strong>L'équipe Harmony</strong>
+                                </p>
+
+                            </td>
+                        </tr>
+
+                        <!-- FOOTER -->
+
+                        <tr>
+                            <td align="center" style="background-color:#F2F4F3; padding:20px 30px;">
+
+                                <p style="margin:0; color:#65716D; font-size:12px; line-height:1.6;">
+                                    Cet email a été envoyé automatiquement à la suite de votre inscription sur le site Harmony.
+                                </p>
+
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+
+    </body>
+    </html>
+    `;
+
+    $headers = [
+        'Content-Type: text/html; charset=UTF-8',
+    ];
+
+    $sent = wp_mail(
+        $email,
+        $subject,
+        $body,
+        $headers
+    );
+
+    if (!$sent) {
+        error_log('[Harmony] Échec de l\'envoi de l\'email de bienvenue.');
+    }
+
+    return $sent;
+}

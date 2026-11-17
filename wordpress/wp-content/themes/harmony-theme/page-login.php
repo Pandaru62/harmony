@@ -81,18 +81,19 @@ get_header();
 
             <?php if (isset($_GET['registered']) && $_GET['registered'] === '1'): ?>
 
-                <div class="login-success">
-                    Votre compte a bien été créé !
-                    Vous pouvez maintenant vous connecter.
-                </div>
+                <output class="success-banner">
+                    <strong>Votre compte a été créé avec succès !</strong>
+                    <p>
+                        <?php if (($_GET['welcome_email'] ?? '') === 'sent'): ?>
+                            Un email de bienvenue vient de vous être envoyé.
+                            Pensez à vérifier vos courriers indésirables.
+                        <?php else: ?>
+                            Votre compte est prêt, mais nous n'avons pas pu envoyer
+                            l'email de bienvenue. Vous pouvez néanmoins vous connecter.
+                        <?php endif; ?>
+                    </p>
+                </output>
 
-            <?php endif;
-            if ($error): ?>
-    
-                <div class="login-error">
-                    <?php echo esc_html($error); ?>
-                </div>
-    
             <?php endif; ?>
     
             <form method="POST">

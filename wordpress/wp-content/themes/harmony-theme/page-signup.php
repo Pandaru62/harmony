@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -8,44 +9,47 @@ $error = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    error_log('🔥 Harmony signup form submitted');
-
+    // Vérification du nonce
     if (
         !isset($_POST['harmony_signup_nonce']) ||
         !wp_verify_nonce(
-            $_POST['harmony_signup_nonce'],
+            sanitize_text_field(wp_unslash($_POST['harmony_signup_nonce'])),
             'harmony_signup'
         )
     ) {
+
         $error = 'Requête invalide.';
 
     } else {
 
+        // Récupération des données
         $email = sanitize_email(
-            $_POST['email'] ?? ''
+            wp_unslash($_POST['email'] ?? '')
         );
 
+        // Ne jamais modifier ou journaliser le mot de passe
         $password = $_POST['password'] ?? '';
         $password_confirmation = $_POST['password_confirmation'] ?? '';
 
         $display_name = sanitize_text_field(
-            $_POST['display_name'] ?? ''
+            wp_unslash($_POST['display_name'] ?? '')
         );
 
         $firstname = sanitize_text_field(
-            $_POST['firstname'] ?? ''
+            wp_unslash($_POST['firstname'] ?? '')
         );
 
         $lastname = sanitize_text_field(
-            $_POST['lastname'] ?? ''
+            wp_unslash($_POST['lastname'] ?? '')
         );
 
-
-        /*
-         * Basic validation
-         */
-
-        if (!$email || !$password || !$password_confirmation || !$display_name) {
+        // Validation
+        if (
+            !$email ||
+            !$password ||
+            !$password_confirmation ||
+            !$display_name
+        ) {
 
             $error = 'Veuillez renseigner tous les champs obligatoires.';
 
@@ -59,11 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         } else {
 
-            /*
-             * Send registration request to API
-             */
-
+            // Appel API
             if (function_exists('harmony_api_register')) {
+
                 $result = harmony_api_register(
                     $email,
                     $password,
@@ -71,30 +73,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $firstname,
                     $lastname
                 );
+
             } else {
+
                 $result = [
                     'success' => false,
                     'error' => 'Le service d’inscription est momentanément indisponible.',
                 ];
             }
 
-            error_log(
-                '🔥 API registration result: ' .
-                print_r($result, true)
-            );
+            // Vérification du résultat
+            if (empty($result['success'])) {
 
-
-            if (!$result['success']) {
-
-                $error = $result['error'];
+                $error = $result['error']
+                    ?? 'Une erreur est survenue lors de la création du compte.';
 
             } else {
 
-                wp_safe_redirect(
-                    home_url('/login/?registered=1')
+                // Envoi de l'email de bienvenue
+                $email_sent = harmony_send_welcome_email(
+                    $email,
+                    $firstname,
+                    $display_name
                 );
-                exit;
 
+                // Redirection
+                $redirect_url = add_query_arg(
+                    [
+                        'registered' => '1',
+                        'welcome_email' => $email_sent ? 'sent' : 'failed',
+                    ],
+                    home_url('/login/')
+                );
+
+                wp_safe_redirect($redirect_url);
+                exit;
             }
         }
     }
