@@ -1,6 +1,4 @@
-
 <?php
-
 function harmony_contact_submit() {
 
     // Vérification du nonce
@@ -38,10 +36,36 @@ function harmony_contact_submit() {
         harmony_contact_redirect('error');
     }
 
-    // Construction du message
-    $body = "Nom : {$name}\n";
-    $body .= "Email : {$email}\n\n";
-    $body .= "Message :\n{$message}";
+    // Objet de l'email
+    $email_subject = ! empty($subject)
+        ? $subject
+        : 'Nouvelle demande de contact';
+
+    $email_subject = 'Contact Harmony — ' . $email_subject;
+
+    // Date de réception
+    $date = wp_date('d/m/Y à H:i');
+
+    // Corps de l'email
+    $body = "NOUVEAU MESSAGE DEPUIS LE SITE HARMONY\n";
+    $body .= "========================================\n\n";
+
+    $body .= "Vous recevez ce message car un visiteur a utilisé ";
+    $body .= "le formulaire de contact du site Harmony.\n\n";
+
+    $body .= "INFORMATIONS DE L'EXPEDITEUR\n";
+    $body .= "----------------------------\n";
+    $body .= "Nom : {$name}\n";
+    $body .= "Email : {$email}\n";
+    $body .= "Objet : " . ($subject ?: 'Non renseigné') . "\n";
+    $body .= "Date de réception : {$date}\n\n";
+
+    $body .= "MESSAGE\n";
+    $body .= "-------\n";
+    $body .= "{$message}\n\n";
+
+    $body .= "----------------------------------------\n";
+    $body .= "Notification automatique — Site Harmony\n";
 
     // En-têtes
     $headers = [
@@ -51,7 +75,7 @@ function harmony_contact_submit() {
     // Envoi
     $sent = wp_mail(
         $to,
-        $subject ?: 'Nouveau message depuis Harmony',
+        $email_subject,
         $body,
         $headers
     );
@@ -63,6 +87,7 @@ function harmony_contact_submit() {
 
     harmony_contact_redirect('success');
 }
+
 
 // Redirection après traitement
 function harmony_contact_redirect($status) {
@@ -80,6 +105,8 @@ function harmony_contact_redirect($status) {
     exit;
 }
 
+
+// Actions WordPress
 add_action(
     'admin_post_nopriv_harmony_contact',
     'harmony_contact_submit'
