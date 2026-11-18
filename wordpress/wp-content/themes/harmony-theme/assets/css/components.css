@@ -56,9 +56,9 @@
 /* image-triptical */
 
 .img-triptical {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
     width: 100%;
     max-width: 1250px;
     height: 100%;
@@ -66,13 +66,23 @@
     gap: 20px;
 }
 
-.img-triptical div img {
+.img-triptical > div {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: var(--space-xs);
+}
+
+.img-triptical > div img {
+    display: block;
     height: 400px;
     width: 100%;
+    object-fit: cover;
 }
 
 .triptical-card {
     display: flex;
+    flex: 1;
     padding: 8px;
     flex-direction: column;
     align-items: center;
@@ -81,14 +91,6 @@
     border: 1px solid var(--color-main-blue);
 }
 
-.img-triptical div:nth-child(1) .triptical-card {
-    border-radius: 
-        var(--radius-lg) 0 0 var(--radius-lg);
-}
-
-.img-triptical div:nth-child(3) .triptical-card {
-    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-}
 
 .eco-responsibility-image {
     width: 100%;
@@ -100,11 +102,11 @@
 
 @media (max-width: 1020px) {
     .img-triptical {
-        flex-direction: column;
+        grid-template-columns: minmax(0, 1fr);
         gap: var(--space-xs);
     }
 
-    .img-triptical div img {
+    .img-triptical > div img {
         display: none;
     }
 
@@ -113,13 +115,6 @@
         gap: var(--space-xs);
     }
 
-    .img-triptical div:nth-child(1) .triptical-card {
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    }
-
-    .img-triptical div:nth-child(3) .triptical-card {
-        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-    }
 
 }
 
@@ -136,7 +131,7 @@
 
 .advantage-card-container {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: var(--space-xs);
     align-self: stretch;
 }

@@ -3,7 +3,7 @@
 ?>
 
 <div class="img-triptical">
-    <div>
+    <div class="triptical-col">
         <img
             src="/wp-content/themes/harmony-theme/assets/images/component/triptical/meditation 1.png"
             alt="Femme méditant assise sur un tapis avec un bracelet connecté Harmony"

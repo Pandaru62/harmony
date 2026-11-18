@@ -257,9 +257,7 @@ function harmony_send_welcome_email($email, $firstname = '', $display_name = '')
                         <tr>
                             <td align="center" style="background-color:#285F6E; padding:30px 20px;">
 
-                                <h1 style="margin:0; color:#FFFFFF; font-size:30px; font-weight:600; letter-spacing:1px;">
-                                    Harmony
-                                </h1>
+                                <img src="' . esc_url(get_template_directory_uri() . '/assets/images/logo/Logo_neutral.svg') . '" alt="Harmony" style="display:block; height:30px; width:auto; margin:0 auto;">
 
                                 <p style="margin:8px 0 0; color:#FFFFFF; font-size:12px; letter-spacing:2px;">
                                     PRENEZ SOIN DE VOUS, SIMPLEMENT.
