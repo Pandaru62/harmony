@@ -97,6 +97,24 @@ function harmonyThemeAssets() {
         true
     );
 
+
+    if (is_front_page()) {
+        wp_enqueue_script(
+            'harmony-ab-testing',
+            $theme . '/assets/js/ab-testing.js',
+            [],
+            filemtime($path . '/assets/js/ab-testing.js'),
+            false
+        );
+
+        wp_script_add_data(
+            'harmony-ab-testing',
+            'strategy',
+            'defer'
+        );
+    }
+
+
     wp_enqueue_script(
         'harmony-component',
         $theme . '/assets/js/component.js',
