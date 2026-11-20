@@ -11,7 +11,7 @@
             <div class="screen-watch">
                 <img
                     id="watch-screen"
-                    src="/wp-content/themes/harmony-theme/assets/images/bracelet-screen/screen1.png"
+                    src="/wp-content/themes/harmony-theme/assets/images/bracelet-screen/screen1.webp"
                     alt="Écran du bracelet connecté affichant le suivi des pas"
                     class="screen-watch-image"
                 />

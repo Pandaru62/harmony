@@ -11,7 +11,7 @@ screenTexts.forEach(text => {
 
         // Change image
         const imageNumber = text.dataset.image;
-        watchImage.src = `/wp-content/themes/harmony-theme/assets/images/bracelet-screen/screen${imageNumber}.png`;
+        watchImage.src = `/wp-content/themes/harmony-theme/assets/images/bracelet-screen/screen${imageNumber}.webp`;
     });
 });
 
@@ -30,7 +30,7 @@ featureTripticalCards.forEach(card => {
         const imageNumber = card.dataset.image;
 
         watchImage2.src =
-            `/wp-content/themes/harmony-theme/assets/images/component/triptical/triptical-${imageNumber}.png`;
+            `/wp-content/themes/harmony-theme/assets/images/component/triptical/triptical-${imageNumber}.webp`;
     });
 });
 

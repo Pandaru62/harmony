@@ -46,7 +46,7 @@ $description = $args['description'] ?? '';
         </div>
         <div class="feature-triptical-img swt-4">
             <img
-                src="/wp-content/themes/harmony-theme/assets/images/component/triptical/triptical-2.png"
+                src="/wp-content/themes/harmony-theme/assets/images/component/triptical/triptical-2.webp"
                 alt="Bien-être"
             />
         </div>

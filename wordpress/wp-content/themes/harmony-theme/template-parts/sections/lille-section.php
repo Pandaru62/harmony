@@ -9,7 +9,7 @@ $paragraph_3 = $args['lille_paragraph_3'] ?? '';
 <section class="default-section">
     <div class="lille-container">
         <img
-            src="/wp-content/themes/harmony-theme/assets/images/component/triptical/triptical-3.png"
+            src="/wp-content/themes/harmony-theme/assets/images/component/triptical/triptical-3.webp"
             alt="Vue de Lille, grand place"
             class="lille-img"
         />
