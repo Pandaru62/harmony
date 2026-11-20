@@ -10,13 +10,22 @@ $cta_secondary_url = $args['cta_secondary_url'] ?? '';
 
 <section class="hero">
 
-    <?php if ($image): ?>
+   <?php if (!empty($image['ID'])): ?>
         <div class="hero__image">
 
-            <img
-                src="<?= esc_url($image['url']); ?>"
-                alt="<?= esc_attr($image['alt']); ?>"
-            />
+            <?= wp_get_attachment_image(
+                $image['ID'],
+                'full',
+                false,
+                [
+                    'class' => 'hero__img',
+                    'alt' => $image['alt'] ?? '',
+                    'loading' => 'eager',
+                    'fetchpriority' => 'high',
+                    'decoding' => 'async',
+                    'sizes' => '(max-width: 768px) 100vw, 90vw',
+                ]
+            ); ?>
 
         </div>
     <?php endif; ?>

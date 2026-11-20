@@ -88,7 +88,7 @@ $step_progress = min(
         <section class="dashboard-sync">
             <img
                 class="dashboard-sync-img"
-                src="/wp-content/themes/harmony-theme/assets/images/bracelet/green_bracelet_harmony.png"
+                src="/wp-content/themes/harmony-theme/assets/images/bracelet/green_bracelet_harmony.webp"
                 alt="bracelet harmony vert"
             >
             <div class="sync-frame">

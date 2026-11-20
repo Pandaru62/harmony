@@ -1,28 +1,28 @@
 const bracelets = [
     {
-        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/pink_bracelet_harmony.png",
+        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/pink_bracelet_harmony.webp",
         color:"rose"
     },
     {
-        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/black_bracelet_harmony.png",
+        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/black_bracelet_harmony.webp",
         color:"noir"
     },
     {
-        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/white_bracelet_harmony.png",
+        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/white_bracelet_harmony.webp",
         color:"blanc"
     },
     {
-        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/blue_bracelet_harmony.png",
+        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/blue_bracelet_harmony.webp",
         color:"bleu"
     },
 
     {
-        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/green_bracelet_harmony.png",
+        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/green_bracelet_harmony.webp",
         color:"vert"
     },
 
     {
-        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/red_bracelet_harmony.png",
+        image:"/wp-content/themes/harmony-theme/assets/images/bracelet/red_bracelet_harmony.webp",
         color:"rouge"
     }
 ];

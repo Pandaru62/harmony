@@ -14,7 +14,7 @@
             <p><?= esc_attr($description)?></p>
         <?php } ?>
         <img
-            src="/wp-content/themes/harmony-theme/assets/images/bracelet/unboxing.png"
+            src="/wp-content/themes/harmony-theme/assets/images/bracelet/unboxing.webp"
             alt="Packaging Harmony écologique"
             class="eco-responsibility-image"
         />

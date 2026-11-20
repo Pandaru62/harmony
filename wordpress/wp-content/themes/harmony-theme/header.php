@@ -235,7 +235,7 @@
                         data-retailer="Decathlon"
                     >
                         <img
-                            src="/wp-content/themes/harmony-theme/assets/images/partners/Decath.png"
+                            src="/wp-content/themes/harmony-theme/assets/images/partners/Decat.webp"
                             alt="Decathlon"
                         />
                     </a>
@@ -249,7 +249,7 @@
                         data-retailer="Cultura"
                     >
                         <img
-                            src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.png"
+                            src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.webp"
                             alt="Cultura"
                         />
                     </a>
@@ -263,7 +263,7 @@
                         data-retailer="Fnac"
                     >
                         <img
-                            src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.png"
+                            src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.webp"
                             alt="Fnac"
                         />
                     </a>

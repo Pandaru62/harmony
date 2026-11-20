@@ -21,7 +21,7 @@
             </div>
         </div>
         <img
-            src="/wp-content/themes/harmony-theme/assets/images/bracelet/bracelet_socle.png"
+            src="/wp-content/themes/harmony-theme/assets/images/bracelet/bracelet_socle.webp"
             alt="Bracelet connecté gris posé sur un socle"
             class="bracelet-image"
         />

@@ -16,15 +16,15 @@
         <div class="carousel-track">
 
             <div class="carousel-item">
-                <img src="/wp-content/themes/harmony-theme/assets/images/bracelet/pink_bracelet_harmony.png" alt="">
+                <img src="/wp-content/themes/harmony-theme/assets/images/bracelet/pink_bracelet_harmony.webp" alt="">
             </div>
 
             <div class="carousel-item active">
-                <img src="/wp-content/themes/harmony-theme/assets/images/bracelet/black_bracelet_harmony.png" alt="">
+                <img src="/wp-content/themes/harmony-theme/assets/images/bracelet/black_bracelet_harmony.webp" alt="">
             </div>
 
             <div class="carousel-item">
-                <img src="/wp-content/themes/harmony-theme/assets/images/bracelet/white_bracelet_harmony.png" alt="">
+                <img src="/wp-content/themes/harmony-theme/assets/images/bracelet/white_bracelet_harmony.webp" alt="">
             </div>
 
         </div>
@@ -48,21 +48,21 @@
     <div class="grid-price">
         <button class="price-cta">
             <img
-                src="/wp-content/themes/harmony-theme/assets/images/partners/Decath.png"
+                src="/wp-content/themes/harmony-theme/assets/images/partners/Decat.webp"
                 alt="Logo Decathlon"
             />
             <span>à partir de 129.99€</span>
         </button>
         <button class="price-cta">
             <img
-                src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.png"
+                src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.webp"
                 alt="Logo Cultura"
             />
             <span>à partir de 129.99€</span>
         </button>
         <button class="price-cta">
             <img
-                src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.png"
+                src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.webp"
                 alt="Logo Fnac"
             />
             <span>à partir de 129.99€</span>

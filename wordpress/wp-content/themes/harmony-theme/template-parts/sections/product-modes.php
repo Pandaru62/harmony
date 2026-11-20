@@ -14,15 +14,15 @@
         </div>
         <div class="modes-grid-images">
             <img
-                src="/wp-content/themes/harmony-theme/assets/images/component/modes/mode1.jpg"
+                src="/wp-content/themes/harmony-theme/assets/images/component/modes/mode1.webp"
                 alt="Homme qui travaille à son bureau, bracelet connecté au poignet."
             />
             <img
-                src="/wp-content/themes/harmony-theme/assets/images/component/modes/mode2.png"
+                src="/wp-content/themes/harmony-theme/assets/images/component/modes/mode2.webp"
                 alt="Femme qui se détend dans son canapé, bracelet connecté au poignet."
             />
             <img
-                src="/wp-content/themes/harmony-theme/assets/images/component/modes/mode3.png"
+                src="/wp-content/themes/harmony-theme/assets/images/component/modes/mode3.webp"
                 alt="Homme qui fait du running, bracelet connecté au poignet."
             />
         </div>

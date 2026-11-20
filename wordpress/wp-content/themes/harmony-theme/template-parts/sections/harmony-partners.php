@@ -23,7 +23,7 @@
             aria-label="Visiter le site Decathlon"
         >
             <img
-                src="/wp-content/themes/harmony-theme/assets/images/partners/Decath.png"
+                src="/wp-content/themes/harmony-theme/assets/images/partners/Decat.webp"
                 alt="Decathlon"
             />
         </a>
@@ -35,7 +35,7 @@
             aria-label="Visiter le site Cultura"
         >
             <img
-                src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.png"
+                src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.webp"
                 alt="Cultura"
             />
         </a>
@@ -47,7 +47,7 @@
             aria-label="Visiter le site Fnac"
         >
             <img
-                src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.png"
+                src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.webp"
                 alt="Fnac"
             />
         </a>
