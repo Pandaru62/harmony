@@ -50,21 +50,21 @@
             <img
                 src="/wp-content/themes/harmony-theme/assets/images/partners/Decat.webp"
                 alt="Logo Decathlon"
-            />
+            >
             <span>à partir de 129.99€</span>
         </button>
         <button class="price-cta">
             <img
                 src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.webp"
                 alt="Logo Cultura"
-            />
+            >
             <span>à partir de 129.99€</span>
         </button>
         <button class="price-cta">
             <img
                 src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.webp"
                 alt="Logo Fnac"
-            />
+            >
             <span>à partir de 129.99€</span>
         </button>
     </div>

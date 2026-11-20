@@ -17,7 +17,7 @@
             src="/wp-content/themes/harmony-theme/assets/images/bracelet/unboxing.webp"
             alt="Packaging Harmony écologique"
             class="eco-responsibility-image"
-        />
+        >
     </div>
     <div class="advantage-cards-list">
         <?php if($advantages) {

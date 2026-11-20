@@ -6,8 +6,8 @@ $ios_url = get_option('harmony_ios_url');
 <section class="default-section">
 
     <div class="div-32">
-        <h2>Quel produit Harmony <br/> est fait pour vous.</h2>
-        <p>Notre bracelet connecté s'adapte à votre quotidien et à votre rythme.<br/> Les accessoires vous permettent de personnaliser votre expérience selon vos besoins.</p>
+        <h2>Quel produit Harmony <br> est fait pour vous.</h2>
+        <p>Notre bracelet connecté s'adapte à votre quotidien et à votre rythme.<br> Les accessoires vous permettent de personnaliser votre expérience selon vos besoins.</p>
     </div>
 
     <div class="advantage-cards-list">

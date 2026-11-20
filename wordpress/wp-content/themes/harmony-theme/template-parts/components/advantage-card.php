@@ -9,7 +9,7 @@
         <img
             src="<?= esc_url($img_url) ?>"
             alt="Icône"
-        />
+        >
         <h4><?= esc_html($title) ?></h4>
     </div>
     <div class="advantage-card-description">

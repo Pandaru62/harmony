@@ -3,8 +3,8 @@
     <div class="div-32">
         <h2>Pourquoi Harmony est différent ?</h2>
         <p>
-            Harmony privilégie l'équilibre à la performance.<br/>
-            Un bracelet discret et personnalisable, doté d'un écran simple permettant de consulter vos données essentielles sans distraction.<br/>
+            Harmony privilégie l'équilibre à la performance.<br>
+            Un bracelet discret et personnalisable, doté d'un écran simple permettant de consulter vos données essentielles sans distraction.<br>
             Gérez vous-mêmes les vibrations du bracelet et profitez de <strong>programmes personnalisés</strong>.
         </p>
     </div>
@@ -24,7 +24,7 @@
             src="/wp-content/themes/harmony-theme/assets/images/bracelet/bracelet_socle.webp"
             alt="Bracelet connecté gris posé sur un socle"
             class="bracelet-image"
-        />
+        >
         <div class="differenciation-text-bubble default-card bubble-3">
             <h3>Capteurs discrets</h3>
             <p>Capteurs intégrés sous le bracelet, au contact de la peau, permettant un suivi précis sans gêne ni élément visible, pour une expérience fluide et non intrusive.</p>
@@ -44,7 +44,7 @@
             <img
                 src="/wp-content/themes/harmony-theme/assets/images/mdi_leaf.svg"
                 alt="Feuille"
-            />
+            >
         </div>
 
         <a class="btn btn--primary" href="/brand">

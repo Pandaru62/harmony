@@ -1,9 +1,9 @@
 <section class="default-section green-section">
 
     <div class="div-32">
-        <h2>Un compagnon discret <br/> qui s'adapte à tous vos besoins</h2>
+        <h2>Un compagnon discret <br> qui s'adapte à tous vos besoins</h2>
         <p class="text-center">
-            Des programmes adaptés à votre quotidien : Harmony ne se limite pas au suivi de données. <br/>
+            Des programmes adaptés à votre quotidien : Harmony ne se limite pas au suivi de données. <br>
             Le bracelet propose des programmes simples pour vous accompagner dans vos moments de concentration, de détente ou d'activité.
         </p>
     </div>
@@ -16,15 +16,15 @@
             <img
                 src="/wp-content/themes/harmony-theme/assets/images/component/modes/mode1.webp"
                 alt="Homme qui travaille à son bureau, bracelet connecté au poignet."
-            />
+            >
             <img
                 src="/wp-content/themes/harmony-theme/assets/images/component/modes/mode2.webp"
                 alt="Femme qui se détend dans son canapé, bracelet connecté au poignet."
-            />
+            >
             <img
                 src="/wp-content/themes/harmony-theme/assets/images/component/modes/mode3.webp"
                 alt="Homme qui fait du running, bracelet connecté au poignet."
-            />
+            >
         </div>
         <div class="modes-grid-cards">
             <div class="modes-grid-card">

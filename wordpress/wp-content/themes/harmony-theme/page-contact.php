@@ -72,7 +72,7 @@ get_header(); ?>
         <div class="div-32">
             <h2>Formulaire de contact</h2>
             <p class="contact-para">
-                Vous n'avez pas de réponses à vos questions ? Pas de soucis !<br/>
+                Vous n'avez pas de réponses à vos questions ? Pas de soucis !<br>
                 Notre équipe se tient à votre disposition.
             </p>
         </div>
@@ -88,7 +88,7 @@ get_header(); ?>
             src="/wp-content/themes/harmony-theme/assets/images/logo/Logo_black.svg"
             alt="Logo Harmony"
             height="66"
-        />
+        >
         <div class="contact-row">
             <h3>Email</h3>
             <p class="contact-para"><?= nl2br(esc_html($harmony_email_msg)); ?></p>

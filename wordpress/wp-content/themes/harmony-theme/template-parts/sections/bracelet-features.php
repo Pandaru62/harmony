@@ -1,9 +1,9 @@
 <section class="default-section">
     <div class="div-32">
-        <h2>Simple et Précis, <br/> Harmony calcule tout.</h2>
+        <h2>Simple et Précis, <br> Harmony calcule tout.</h2>
         <p class="text-center">
-            Les chiffres, c'est bien, mais les comprendre c'est mieux !<br/>
-            Grâce à notre application et à nos bilans hebdomadaires,<br/>
+            Les chiffres, c'est bien, mais les comprendre c'est mieux !<br>
+            Grâce à notre application et à nos bilans hebdomadaires,<br>
             vous apprendrez à être mieux à l'écoute de votre corps et de vos besoins.
         </p>
 
@@ -14,7 +14,7 @@
                     src="/wp-content/themes/harmony-theme/assets/images/bracelet-screen/screen1.webp"
                     alt="Écran du bracelet connecté affichant le suivi des pas"
                     class="screen-watch-image"
-                />
+                >
             </div>
             <div class="screen-watch-description">
                 <div class="screen-watch-text swt-1" data-image="1">
@@ -22,7 +22,7 @@
                         <img
                             src="/wp-content/themes/harmony-theme/assets/icons/mdi_heart-pulse.svg"
                             alt="Icône fréquence cardiaque"
-                        />
+                        >
                         <h5>Votre nombre de pas journalier</h5>
                     </div>
                     <p class="screen-watch-text-content">
@@ -34,7 +34,7 @@
                         <img
                             src="/wp-content/themes/harmony-theme/assets/icons/mdi_heart-pulse.svg"
                             alt="Icône fréquence cardiaque"
-                        />
+                        >
                         <h5>Votre nombre de calories brûlées</h5>
                     </div>
                     <p class="screen-watch-text-content">
@@ -46,7 +46,7 @@
                         <img
                             src="/wp-content/themes/harmony-theme/assets/icons/mdi_heart-pulse.svg"
                             alt="Icône fréquence cardiaque"
-                        />
+                        >
                         <h5>Votre fréquence cardiaque</h5>
                     </div>
                     <p class="screen-watch-text-content">
@@ -58,7 +58,7 @@
                         <img
                             src="/wp-content/themes/harmony-theme/assets/icons/mdi_heart-pulse.svg"
                             alt="Icône fréquence cardiaque"
-                        />
+                        >
                         <h5>Votre taux d'oxygène dans le sang</h5>
                     </div>
                     <p class="screen-watch-text-content">

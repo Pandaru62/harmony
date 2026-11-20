@@ -265,7 +265,7 @@ function harmony_testimonials_rating_callback($post) {
             value="<?= esc_attr($value ?: 5); ?>"
             max="5"
             min="1"
-        />
+        >
 
     </label>
 

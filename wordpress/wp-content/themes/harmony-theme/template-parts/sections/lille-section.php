@@ -12,7 +12,7 @@ $paragraph_3 = $args['lille_paragraph_3'] ?? '';
             src="/wp-content/themes/harmony-theme/assets/images/component/triptical/triptical-3.webp"
             alt="Vue de Lille, grand place"
             class="lille-img"
-        />
+        >
         <div class="lille-text-zone">
             <h2>
                 <?= esc_html($title); ?>
@@ -23,7 +23,7 @@ $paragraph_3 = $args['lille_paragraph_3'] ?? '';
             <img
                 src="/wp-content/themes/harmony-theme/assets/images/logo/Logo_fr_flag.svg"
                 alt="Logo harmony sur fond de drapeau français"
-            />
+            >
             <p>
                 <?= nl2br(esc_html($paragraph_2)); ?>
             </p>

@@ -50,7 +50,7 @@ $eco_responsibility = [
 
 $features = [
     'title' => "Un bracelet connecté simple et précis.",
-    'description' => "Les chiffres, c'est bien, mais les comprendre c'est mieux !<br/>
+    'description' => "Les chiffres, c'est bien, mais les comprendre c'est mieux !<br>
             Grâce à notre application et à nos bilans hebdomadaires, vous apprendrez à être mieux à l'écoute de votre corps et de vos besoins."
 ];
 

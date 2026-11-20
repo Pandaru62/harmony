@@ -21,7 +21,7 @@ $cta_url_2 = $args['cta_secondary_text'] ?? null;
             <img
                 src="<?= $card['image'] ?>"
                 alt="Produit"
-            />
+            >
             <h3><?= $card['title'] ?></h3>
             <p><?= nl2br(esc_html($card['description'])); ?></p>
             <a class="btn btn--primary" href="<?= esc_url($card['cta_url']); ?>">

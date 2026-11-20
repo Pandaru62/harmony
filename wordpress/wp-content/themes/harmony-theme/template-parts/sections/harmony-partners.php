@@ -25,7 +25,7 @@
             <img
                 src="/wp-content/themes/harmony-theme/assets/images/partners/Decat.webp"
                 alt="Decathlon"
-            />
+            >
         </a>
 
         <a
@@ -37,7 +37,7 @@
             <img
                 src="/wp-content/themes/harmony-theme/assets/images/partners/cultura.webp"
                 alt="Cultura"
-            />
+            >
         </a>
 
         <a
@@ -49,7 +49,7 @@
             <img
                 src="/wp-content/themes/harmony-theme/assets/images/partners/fnac.webp"
                 alt="Fnac"
-            />
+            >
         </a>
 
     </div>

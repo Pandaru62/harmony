@@ -56,7 +56,7 @@ function harmony_settings_page() {
                             name="harmony_facebook_url"
                             value="<?php echo esc_attr(get_option('harmony_facebook_url')); ?>"
                             class="regular-text"
-                        />
+                        >
                     </td>
                 </tr>
 
@@ -71,7 +71,7 @@ function harmony_settings_page() {
                             name="harmony_instagram_url"
                             value="<?php echo esc_attr(get_option('harmony_instagram_url')); ?>"
                             class="regular-text"
-                        />
+                        >
                     </td>
                 </tr>
 
@@ -86,7 +86,7 @@ function harmony_settings_page() {
                             name="harmony_linkedin_url"
                             value="<?php echo esc_attr(get_option('harmony_linkedin_url')); ?>"
                             class="regular-text"
-                        />
+                        >
                     </td>
                 </tr>
 
@@ -101,7 +101,7 @@ function harmony_settings_page() {
                             name="harmony_youtube_url"
                             value="<?php echo esc_attr(get_option('harmony_youtube_url')); ?>"
                             class="regular-text"
-                        />
+                        >
                     </td>
                 </tr>
 
@@ -137,7 +137,7 @@ function harmony_settings_page() {
                             type="email" name="harmony_email"
                             value="<?php echo esc_attr(get_option('harmony_email')); ?>"
                             class="regular-text"
-                        />
+                        >
                     </td>
                 </tr>
 
@@ -183,7 +183,7 @@ function harmony_settings_page() {
                             type="phone" name="harmony_phone"
                             value="<?php echo esc_attr(get_option('harmony_phone')); ?>"
                             class="regular-text"
-                        />
+                        >
                     </td>
                 </tr>
 
@@ -205,7 +205,7 @@ function harmony_settings_page() {
                             name="harmony_android_url"
                             value="<?php echo esc_attr(get_option('harmony_android_url')); ?>"
                             class="regular-text"
-                        />
+                        >
                     </td>
                 </tr>
 
@@ -220,7 +220,7 @@ function harmony_settings_page() {
                             name="harmony_ios_url"
                             value="<?php echo esc_attr(get_option('harmony_ios_url')); ?>"
                             class="regular-text"
-                        />
+                        >
                     </td>
                 </tr>
 

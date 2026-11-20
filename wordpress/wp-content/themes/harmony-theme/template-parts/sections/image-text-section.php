@@ -15,7 +15,7 @@ $cta_url_2 = $args['cta_url_2'] ?? '';
         src="<?= esc_url($image['url']); ?>"
         alt="<?= esc_attr($image['alt']); ?>"
         class="its-image"
-    />
+    >
     <?php endif; ?>
 
     <div class="div-32">

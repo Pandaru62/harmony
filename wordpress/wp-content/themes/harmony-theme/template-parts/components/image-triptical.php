@@ -7,7 +7,7 @@
         <img
             src="/wp-content/themes/harmony-theme/assets/images/component/triptical/meditation 1.webp"
             alt="Femme méditant assise sur un tapis avec un bracelet connecté Harmony"
-        />
+        >
         <?php if($hasDescription) {?>
             <div class="triptical-card">
                 <h4>Gestion du stress</h4>
@@ -19,7 +19,7 @@
         <img
             src="/wp-content/themes/harmony-theme/assets/images/component/triptical/dodo 2.webp"
             alt="Homme dormant sur le côté avec un bracelet connecté Harmony"
-        />
+        >
         <?php if($hasDescription) {?>
             <div class="triptical-card">
                 <h4>Suivi du sommeil</h4>
@@ -31,7 +31,7 @@
         <img
             src="/wp-content/themes/harmony-theme/assets/images/component/triptical/vélo 3.webp"
             alt="Femme courant avec un bracelet connecté Harmony"
-        />
+        >
         <?php if($hasDescription) {?>
             <div class="triptical-card">
                 <h4>Activité quotidienne</h4>

@@ -24,7 +24,7 @@
     <img
         src="<?= esc_url($image['url']); ?>"
         alt="<?= esc_attr($image['alt']) ?>"
-    />
+    >
     <div class="div-32">
         <h2><?= esc_html($title)?></h2>
          <?php if($paragraph_1) { ?>
